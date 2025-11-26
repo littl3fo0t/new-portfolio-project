@@ -5,6 +5,7 @@ import Menu from "../components/Menu";
 const Home = () => {
     return (
         <>
+            <title>Thomas Brun | Full-Stack Developer</title>
             <Menu />
 
             <main className="container has-text-centered" id="home">
