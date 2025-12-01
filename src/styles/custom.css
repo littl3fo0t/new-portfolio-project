@@ -3,6 +3,10 @@ main#home {
     margin-top: auto;
 }
 
+footer div {
+    gap: 48px;  
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 480px) {
     div#form-controls {
