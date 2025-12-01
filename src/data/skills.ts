@@ -70,6 +70,20 @@ const skills: Skill[] = [
         hasAddons: false,
         iconName: null,
         rank: 4
+    },
+    {
+        name: "html",
+        displayName: "HTML",
+        hasAddons: true,
+        iconName: ["fab", "fa-html5"],
+        rank: 9
+    },
+    {
+        name: "css",
+        displayName: "CSS",
+        hasAddons: true,
+        iconName: ["fab", "fa-css3-alt"],
+        rank: 8
     }
 ];
 

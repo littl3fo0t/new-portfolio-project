@@ -1,19 +1,10 @@
 // About Page
 
-import { useEffect, useState } from "react";
 import Menu from "../components/Menu";
-import type { Skill } from "../types/skill";
 import skills from "../data/skills";
-import Tag from "../components/Tag";
-import Badge from "../components/Badge";
+import Tags from "../components/Tags";
 
 const About = () => {
-    // Get skills on page load
-    const [tags, setTags] = useState<Skill[]>(skills);
-    useEffect(() => {
-        setTags(prev => prev.sort((a, b) => a.rank - b.rank));
-    }, []);
-
     return (
         <>
             <title>Thomas Brun | About Me</title>
@@ -38,14 +29,7 @@ const About = () => {
                     <div className="column">
                         <section className="section">
                             <h2 className="title is-2">My Skills</h2>
-                            <div className="field is-grouped is-grouped-multiline">
-                                { tags.map((skill, index) => {
-                                    if (skill.hasAddons)
-                                        return (<Badge key={index} name={skill.name} displayName={skill.displayName} iconName={skill.iconName}  />);
-                                    else
-                                        return (<Tag key={index} name={skill.name} displayName={skill.displayName} />);
-                                }) }
-                            </div>
+                            <Tags skills={skills} />
                         </section>
                     </div>
                 </div>
