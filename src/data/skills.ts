@@ -33,7 +33,7 @@ const skills: Skill[] = [
         name: "sql",
         displayName: "SQL",
         hasAddons: true,
-        iconName: ["fab", "fa-database"],
+        iconName: ["fas", "fa-database"],
         rank: 7
     },
     {

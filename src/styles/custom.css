@@ -4,12 +4,23 @@ main#home {
 }
 
 footer div {
-    gap: 48px;  
+    gap: 48px;
+}
+
+.card {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.card-header {
+    justify-content: center;
+    padding: 10px 0px;
 }
 
 /* Mobile Styles */
 @media only screen and (max-width: 480px) {
-    
+
     div#form-controls {
         gap: 16px;
     }
@@ -18,7 +29,9 @@ footer div {
         width: 150px;
     }
 
-    div.navbar-item a, div.navbar-item div.select, div.navbar-item select {
+    div.navbar-item a,
+    div.navbar-item div.select,
+    div.navbar-item select {
         width: 100%;
     }
 }
