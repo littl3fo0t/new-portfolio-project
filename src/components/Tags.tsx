@@ -9,10 +9,9 @@ interface TagsProps {
 };
 
 const Tags: React.FC<TagsProps> = ({ skills }) => {
-    const sortedSkills = skills.sort((a, b) => b.rank - a.rank);
     return (
         <div className="field is-grouped is-grouped-multiline">
-            { sortedSkills.map((skill, index) => <Tag key={index} skill={skill} />) }
+            { skills.map((skill, index) => <Tag key={index} skill={skill} />) }
         </div>
     );
 };

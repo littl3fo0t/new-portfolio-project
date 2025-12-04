@@ -11,6 +11,7 @@ footer div {
     max-width: 400px;
     margin: 0 auto;
     margin-top: 25px;
+    gap: 16px;
 }
 
 .card-header {

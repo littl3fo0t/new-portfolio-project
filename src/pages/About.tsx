@@ -6,6 +6,8 @@ import Tags from "../components/Tags";
 import Footer from "../components/Footer";
 
 const About = () => {
+    const sortedSkills = skills.sort((a, b) => b.rank - a.rank);
+
     return (
         <>
             <title>Thomas Brun | About Me</title>
@@ -30,7 +32,7 @@ const About = () => {
                     <div className="column">
                         <section className="section">
                             <h2 className="title is-2">My Skills</h2>
-                            <Tags skills={skills} />
+                            <Tags skills={sortedSkills} />
                         </section>
                     </div>
                 </div>
