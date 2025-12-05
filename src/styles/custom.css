@@ -1,3 +1,11 @@
+/* Color schemes for tags (taken from schemecolor.com & colorswall.com) */
+:root {
+    --javascript-scheme: rgb(240, 219, 79);
+    --react-scheme: rgb(97, 219, 251);
+    --html-scheme: rgb(240, 101, 41);
+    --css-scheme: rgb(38, 77, 228);
+}
+
 main#home {
     width: 100%;
     margin-top: auto;
@@ -17,6 +25,24 @@ footer div {
 .card-header {
     justify-content: center;
     padding: 10px 0px;
+}
+
+/* Tag Styles */
+span[data-name="javascript"] {
+    background-color: var(--javascript-scheme);
+}
+
+span[data-name="react"] {
+    background-color: var(--react-scheme);
+}
+
+span[data-name="html"] {
+    background-color: var(--html-scheme);
+}
+
+span[data-name="css"] {
+    background-color: var(--css-scheme);
+    color: white;
 }
 
 /* Mobile Styles ONLY */
