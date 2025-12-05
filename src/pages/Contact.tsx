@@ -1,11 +1,11 @@
 // Contact Page
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Error from "../components/Error";
 import Success from "../components/Success";
-import sendEmail from "../utils/sendEmail";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -16,7 +16,13 @@ const Contact = () => {
     const [isFail, setIsFail] = useState(false);
     const [error, setError] = useState("");
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // Clear error message
+    useEffect(() => {
+        if (!isFail)
+            setError("");
+    }, [error]);
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         // Validate form input
@@ -25,14 +31,32 @@ const Contact = () => {
             setError("One of the required fields was not filled out properly. Please double check and try again.");
         } else {
             setIsLoading(true);
-            // setIsSuccess(true);
 
-            // console.log("Name:", name);
-            // console.log("Email:", email);
-            // console.log("Message:", message);
-            
+            emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
-            //setIsLoading(false);
+            // Attempt to send email
+            try {
+                await emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, {
+                    name: name.trim(),
+                    email: email.trim(),
+                    message: message.trim()
+                });
+
+                setIsSuccess(true);
+                setIsFail(false);
+
+                // Clear input fields
+                setName("");
+                setEmail("");
+                setMessage("");
+            } catch (err) {
+                console.log(err);
+                setIsSuccess(false);
+                setIsFail(true);
+                setError("An unexpected issue has occurred. Please either try again later or reach out to me directly by email at thomas.brun.1703@hotmail.com.");
+            } finally {
+                setIsLoading(false);
+            }
         }
     };
 
@@ -57,9 +81,9 @@ const Contact = () => {
                     <p className="subtitle is-spaced is-size-2-desktop is-size-3-tablet is-size-4-mobile">Feel free to reach out to me and I will back to you ASAP 😎</p>
                 </section>
                 <div className="container mt-4">
-                    { isFail && <Error error={error} /> }
+                    {isFail && <Error error={error} />}
 
-                    { isSuccess && <Success /> }
+                    {isSuccess && <Success />}
 
                     <form className="box mt-4" onSubmit={handleSubmit}>
                         <div className="field">
@@ -70,7 +94,7 @@ const Contact = () => {
                                     className="input"
                                     id="name"
                                     value={name}
-                                    onChange={ e => setName(e.target.value) }
+                                    onChange={e => setName(e.target.value)}
                                     required
                                 />
                                 <span className="icon is-small is-left">
@@ -86,7 +110,7 @@ const Contact = () => {
                                     className="input"
                                     id="email"
                                     value={email}
-                                    onChange={ e => setEmail(e.target.value) }
+                                    onChange={e => setEmail(e.target.value)}
                                     required
                                 />
                                 <span className="icon is-small is-left">
@@ -103,14 +127,14 @@ const Contact = () => {
                                     placeholder="Enter your massage"
                                     rows={10}
                                     value={message}
-                                    onChange={ e => setMessage(e.target.value) }
+                                    onChange={e => setMessage(e.target.value)}
                                     required
                                 >
                                 </textarea>
                             </div>
                         </div>
                         <div className="is-flex is-justify-content-center" id="form-controls">
-                            <button className={`button is-primary is-rounded ${isLoading ? "is-loading": ""}`} type="submit" disabled={isLoading}>
+                            <button className={`button is-primary is-rounded ${isLoading ? "is-loading" : ""}`} type="submit" disabled={isLoading}>
                                 <span className="icon">
                                     <i className="fas fa-check-circle"></i>
                                 </span>
