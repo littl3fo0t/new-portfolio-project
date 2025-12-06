@@ -1,10 +1,13 @@
 export interface Project {
-    id: string;
+    id: number;
     title: string;
     imageUrl: string | null;
     tags: string[];
     description: string;
-    projectUrl: string | null;
+    links: {
+        github: string;
+        live: string | null;
+    };
     isComplete: boolean;
     createdDate: Date;
 };
