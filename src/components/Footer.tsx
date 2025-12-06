@@ -8,23 +8,23 @@ const Footer: React.FC = () => {
             <div className="is-flex is-justify-content-center mb-2">
                 <a href="https://www.linkedin.com/in/thomasbrun1/" target="_blank" title="LinkedIn Profile">
                     <span className="icon is-large has-text-white">
-                        <i className="fab fa-linkedin-in fa-2x"></i>
+                        <i className="fab fa-border fa-linkedin-in fa-2x"></i>
                     </span>
                 </a>
                 <a href="https://github.com/littl3fo0t" target="_blank" title="GitHub Profile">
                     <span className="icon is-large has-text-white">
-                        <i className="fab fa-github fa-2x"></i>
+                        <i className="fab fa-border fa-github fa-2x"></i>
                     </span>
                 </a>
                 <a href="mailto:thomas.brun.1703@hotmail.com" title="Personal email">
                     <span className="icon is-large has-text-white">
-                        <i className="far fa-envelope fa-2x"></i>
+                        <i className="far fa-border fa-envelope fa-2x"></i>
                     </span>
                 </a>
             </div>
             <div className="content has-text-centered">
                 <p className="has-text-white is-size-5">
-                    &copy; 2025 | Made with ❤️ by me
+                    &copy; 2025 | Built with ❤️ by me
                 </p>
             </div>
             <div className="is-flex is-justify-content-center">
