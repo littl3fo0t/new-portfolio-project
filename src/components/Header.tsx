@@ -26,7 +26,9 @@ const Menu: React.FC = () => {
             <nav className="navbar is-spaced has-shadow" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
                     <Link to="/" className="navbar-item">
-                        <img src="https://bulma.io/assets/images/placeholders/48x48.png" alt="placeholder" className="image image is-48x48" />
+                        <span className="icon is-large has-text-white">
+                            <i className="fab fas fa-home fa-2x"></i>
+                        </span>
                     </Link>
                     <button role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menu" onClick={handleClick}>
                         <span aria-hidden="true"></span>

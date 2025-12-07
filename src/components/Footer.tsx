@@ -8,17 +8,17 @@ const Footer: React.FC = () => {
             <div className="is-flex is-justify-content-center mb-2">
                 <a href="https://www.linkedin.com/in/thomasbrun1/" target="_blank" title="LinkedIn Profile">
                     <span className="icon is-large has-text-white">
-                        <i className="fab fa-border fa-linkedin-in fa-2x"></i>
+                        <i className="fab fa-border fa-linkedin-in fa-2x" aria-hidden="true"></i>
                     </span>
                 </a>
                 <a href="https://github.com/littl3fo0t" target="_blank" title="GitHub Profile">
                     <span className="icon is-large has-text-white">
-                        <i className="fab fa-border fa-github fa-2x"></i>
+                        <i className="fab fa-border fa-github fa-2x" aria-hidden="true"></i>
                     </span>
                 </a>
                 <a href="mailto:thomas.brun.1703@hotmail.com" title="Personal email">
                     <span className="icon is-large has-text-white">
-                        <i className="far fa-border fa-envelope fa-2x"></i>
+                        <i className="far fa-border fa-envelope fa-2x" aria-hidden="true"></i>
                     </span>
                 </a>
             </div>
