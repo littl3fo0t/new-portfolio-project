@@ -6,7 +6,7 @@ import ProjectCard from "../components/Project";
 import projects from "../data/projects";
 
 const Projects: React.FC = () => {
-    const sortedProjects = projects.sort((a, b) => a.createdDate.getTime() - a.createdDate.getTime());
+    const sortedProjects = projects.sort((a, b) => a.createdDate.getTime() - b.createdDate.getTime());
     return (
         <>
             <title>Thomas Brun | My Projects</title>

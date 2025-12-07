@@ -1,7 +1,7 @@
 // Project Component
 
 import type React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import type { Project } from "../types/project";
 import comingSoonPlaceholder from "../assets/images/coming-soon.jpg";
 
