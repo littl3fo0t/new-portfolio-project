@@ -11,7 +11,7 @@ const projects: Project[] = [
             github: "https://github.com/littl3fo0t/Yu-Gi-Oh-Card-App",
             live: null
         },
-        isComplete: true,
+        isComplete: false,
         createdDate: new Date("2025-04-01")
     },
     {
@@ -24,7 +24,7 @@ const projects: Project[] = [
             github: "https://github.com/littl3fo0t/littl3fo0t.github.io",
             live: "https://littl3fo0t.github.io/"
         },
-        isComplete: true,
+        isComplete: false,
         createdDate: new Date("2025-05-30")
     },
     {
@@ -37,7 +37,7 @@ const projects: Project[] = [
             github: "https://github.com/littl3fo0t/Yu-Gi-Oh-Card-App-v2",
             live: null
         },
-        isComplete: true,
+        isComplete: false,
         createdDate: new Date("2025-04-01")
     }
 ];
