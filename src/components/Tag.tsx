@@ -13,23 +13,23 @@ const Tag: React.FC<TagProps> = ({ skill }) => {
     const encodedName = encodeURIComponent(displayName);
     if (hasAddons) {
         return (
-            <div className="control">
-                <div className="tags are-medium has-addons">
-                    <span className="tag icon is-dark">
-                        <i className={iconName?.join(" ")} aria-hidden="true"></i>
-                    </span>
-                    <Link to={`/projects?tag=${encodedName}`}>
+            <Link to={`/projects?tag=${encodedName}`}>
+                <div className="control">
+                    <div className="tags are-medium has-addons">
+                        <span className="tag icon is-dark">
+                            <i className={iconName?.join(" ")} aria-hidden="true"></i>
+                        </span>
                         <span className="tag is-hoverable" data-name={name}>{displayName}</span>
-                    </Link>
+                    </div>
                 </div>
-            </div>
+            </Link>
         );
     } else {
         return (
             <Link to={`/projects?tag=${encodedName}`}>
                 <span className="tag is-hoverable is-medium" data-name={name}>{displayName}</span>
             </Link>
-            
+
         );
     }
 
