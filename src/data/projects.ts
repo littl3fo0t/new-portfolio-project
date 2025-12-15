@@ -1,5 +1,6 @@
 import type { Project } from "../types/project";
 import project1Thumbnail from "../assets/images/thumbnails/Project-1.png";
+import project2Thumbnail from "../assets/images/thumbnails/Project-2.png";
 
 const projects: Project[] = [
     {
@@ -16,7 +17,7 @@ const projects: Project[] = [
         createdDate: new Date("2025-04-01")
     },
     {
-        id: 2,
+        id: 3,
         title: "My First Portfolio Website",
         imageUrl: null,
         tags: ["HTML", "CSS", "JavaScript", "11ty", "Nunjucks", "GitHub Pages"],
@@ -29,16 +30,16 @@ const projects: Project[] = [
         createdDate: new Date("2025-05-30")
     },
     {
-        id: 3,
+        id: 2,
         title: "Yu-Gi-Oh! Card Search App (version 2)",
-        imageUrl: null,
+        imageUrl: project2Thumbnail,
         tags: ["HTML", "CSS", "TypeScript", "React", "Redux", "Vite"],
         description: "A more complex card search app for the Yu-Gi-Oh! trading card game built using Vite, React, TypeScript and Redux.",
         links: {
             github: "https://github.com/littl3fo0t/Yu-Gi-Oh-Card-App-v2",
             live: null
         },
-        isComplete: false,
+        isComplete: true,
         createdDate: new Date("2025-04-01")
     }
 ];
